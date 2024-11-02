@@ -4,7 +4,7 @@ Tags: security, idle logout, logout, protection, inactive user
 Donate link: https://www.paypal.com/donate?hosted_button_id=2UCQKR868M9WE
 Requires at least: 5.8
 Tested up to: 6.6
-Stable tag: 3.4.4
+Stable tag: 3.4.5
 License: GPLv2 or later
 Requires PHP: 7.4
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -98,6 +98,9 @@ Slim Stat Analytics: Users using "Slimstat Analytics" plugin version upto 4.6.2 
 4. Multi User Role Screen
 
 == Changelog ==
+
+= 3.4.5 - November 2nd, 2024 =
+* Added: Filter hook.
 
 = 3.4.4 - September 1st, 2024 =
 * Localizations updated for French, German and Spannish.
