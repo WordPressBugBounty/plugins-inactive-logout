@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'codemanas/inactive-logout',
-        'pretty_version' => '3.4.5',
-        'version' => '3.4.5.0',
-        'reference' => '2df3450d2a0d7f4902e006d1f927e0d05b857840',
+        'pretty_version' => '3.4.6',
+        'version' => '3.4.6.0',
+        'reference' => '5d65abd7065edcade87e8dc72a403b56c5b446bc',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'codemanas/inactive-logout' => array(
-            'pretty_version' => '3.4.5',
-            'version' => '3.4.5.0',
-            'reference' => '2df3450d2a0d7f4902e006d1f927e0d05b857840',
+            'pretty_version' => '3.4.6',
+            'version' => '3.4.6.0',
+            'reference' => '5d65abd7065edcade87e8dc72a403b56c5b446bc',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
