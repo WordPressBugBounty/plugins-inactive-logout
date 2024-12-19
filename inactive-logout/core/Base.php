@@ -203,13 +203,13 @@ class Base {
 						'logout_message'               => ! empty( $after_logout_content ) ? $after_logout_content : apply_filters( 'ina__logout_message', '<p>' . esc_html__( 'You have been logged out because of inactivity.', 'inactive-logout' ) . '</p>' ),
 						'disableCloseWithoutReloadBtn' => ! empty( Helpers::get_option( '__ina_disable_close_without_reload' ) ) ? Helpers::get_option( '__ina_disable_close_without_reload' ) : ''
 					] ),
-					'settings' => apply_filters( 'ina_logout_settings', [
+					'settings' => [
 						'timeout'                    => ! empty( $ina_logout_time ) ? absint( $ina_logout_time ) : 15 * 60,
 						'disable_countdown'          => ! empty( $this->settings->disable_prompt_timer ),
 						'warn_message_enabled'       => ! empty( $this->settings->warn_only_enable ),
 						'countdown_timeout'          => ! empty( $this->settings->prompt_countdown_timer ) ? absint( $this->settings->prompt_countdown_timer ) : 10,
 						'disable_automatic_redirect' => ! empty( $this->settings->enabled_redirect ) && ! empty( $this->settings->automatic_redirect )
-					] ),
+					],
 					'security' => wp_create_nonce( '_inaajax' ),
 				];
 
@@ -223,6 +223,8 @@ class Base {
 					$data['settings']['debug_msg']['active']           = __( 'Tracking activity!', 'inactive-logout' );
 					$data['settings']['debug_msg']['date_time_format'] = $date_format . ' ' . $time_format;
 				}
+
+				$data['settings'] = apply_filters( 'ina_logout_settings', $data['settings'] );
 
 				$dependencies = require_once INACTIVE_LOGOUT_DIR_PATH . 'build/index.asset.php';
 				$dependencies = ! empty( $dependencies ) ? $dependencies['dependencies'] : [];

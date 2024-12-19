@@ -3,8 +3,8 @@ Contributors: j__3rk
 Tags: security, idle logout, logout, protection, inactive user
 Donate link: https://www.paypal.com/donate?hosted_button_id=2UCQKR868M9WE
 Requires at least: 5.8
-Tested up to: 6.6
-Stable tag: 3.4.6
+Tested up to: 6.7
+Stable tag: 3.4.7
 License: GPLv2 or later
 Requires PHP: 7.4
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -98,6 +98,11 @@ Slim Stat Analytics: Users using "Slimstat Analytics" plugin version upto 4.6.2 
 4. Multi User Role Screen
 
 == Changelog ==
+
+= 3.4.7 - December 19th, 2024 =
+* Changed: Styling
+* Added: User based tab.
+* Minor bug fixes
 
 = 3.4.6 - November 6th, 2024 =
 * Documentation link added.
