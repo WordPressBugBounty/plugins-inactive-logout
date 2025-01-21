@@ -2,9 +2,9 @@
 Contributors: j__3rk
 Tags: security, idle logout, logout, protection, inactive user
 Donate link: https://www.paypal.com/donate?hosted_button_id=2UCQKR868M9WE
-Requires at least: 5.8
+Requires at least: 6.2
 Tested up to: 6.7
-Stable tag: 3.4.7
+Stable tag: 3.4.8
 License: GPLv2 or later
 Requires PHP: 7.4
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -39,8 +39,9 @@ A simple plugin which is easy to configure and use. After installing and activat
 
 Few of the key features to **[Inactive Logout Pro](https://inactive-logout.com/pricing/ "Inactive Logout Pro")**:
 
-* Fully functional multi-tab support.
 * Auto browser close logout after defined duration.
+* Fully functional multi-tab support.
+* User Based Logout
 * Track Visitors based on **(Login time, logout time, browser, online status, session duration, role, os, IP)**
 * Force Logout All Users
 * Logout Specific User(s)
@@ -98,6 +99,12 @@ Slim Stat Analytics: Users using "Slimstat Analytics" plugin version upto 4.6.2 
 4. Multi User Role Screen
 
 == Changelog ==
+
+= 3.4.8 - January 21st, 2024 =
+* Updated: Render method update.
+* Updated: Requires WordPress version 6.2
+* Fixed: Logged out popup message not showing when disable popup countdown is enabled.
+* Bug Fixes related to logout and redirect not working for roles that are not administrator.
 
 = 3.4.7 - December 19th, 2024 =
 * Changed: Styling

@@ -120,7 +120,7 @@ class Base {
 			ConcurrentLogin::getInstance();
 		}
 
-		if ( ( ! empty( $this->settings->advanced ) && ! empty( $this->settings->advanced['redirect_page'] ) ) || ! empty( $this->settings->enabled_redirect ) ) {
+		if ( ! wp_doing_ajax() && ( ( ! empty( $this->settings->advanced ) && ! empty( $this->settings->advanced['redirect_page'] ) ) || ! empty( $this->settings->enabled_redirect ) ) ) {
 			LogoutHandler::getInstance();
 		}
 	}

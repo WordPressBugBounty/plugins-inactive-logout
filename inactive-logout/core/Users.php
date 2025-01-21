@@ -12,8 +12,6 @@ class Users {
 	 */
 	public function logoutSession() {
 		check_ajax_referer( '_inaajax', 'security' );
-
-		//Logout Nows
 		if ( is_user_logged_in() ) {
 			wp_logout();
 		}

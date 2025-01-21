@@ -7,10 +7,8 @@ class LogoutHandler {
 	protected $settings = false;
 
 	protected function __construct() {
-		if ( ! wp_doing_ajax() ) {
-			add_filter( 'logout_redirect', [ $this, 'logout_redirect' ], 99, 3 );
-			add_action( 'wp_logout', [ $this, 'wp_logout' ], 99 );
-		}
+		add_filter( 'logout_redirect', [ $this, 'logout_redirect' ], 99, 3 );
+		add_action( 'wp_logout', [ $this, 'wp_logout' ], 99 );
 
 		$this->settings = Helpers::getInactiveSettingsData();
 	}

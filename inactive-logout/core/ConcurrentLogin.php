@@ -2,8 +2,6 @@
 
 namespace Codemanas\InactiveLogout;
 
-use Codemanas\InactiveLogoutAddon\Backend\TrackLoginHistory;
-
 /**
  * Core Functions for Concurrent Logins
  *

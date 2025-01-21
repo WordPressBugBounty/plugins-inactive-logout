@@ -114,6 +114,7 @@
             <li><span class="dashicons dashicons-yes-alt"></span> Disable Inactive Logout Functionality</li>
             <li><span class="dashicons dashicons-yes-alt"></span> Limit User logins</li>
         </ul>
+        <p>* Pro version also includes other features such as <strong>browser close logout, advanced concurrent login settings, forced logouts, user login/logout tracking and more.</strong></p>
         <div class="ina-floating-widget__link">
             <a href="https://www.inactive-logout.com/pricing" target="_blank">Unlock User Based Settings</a>
         </div>
