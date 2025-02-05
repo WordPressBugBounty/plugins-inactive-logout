@@ -1,15 +1,15 @@
 === Inactive Logout ===
 Contributors: j__3rk
-Tags: security, idle logout, logout, protection, inactive user
+Tags: security, idle logout, logout, user redirection, concurrent login limit
 Donate link: https://www.paypal.com/donate?hosted_button_id=2UCQKR868M9WE
 Requires at least: 6.2
 Tested up to: 6.7
-Stable tag: 3.4.8
+Stable tag: 3.4.9
 License: GPLv2 or later
 Requires PHP: 7.4
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Logs out users within defined time when inactive. Modify to show only wake up message and not log out as well. Supported for multisites as well.
+Automatically logout idle user sessions, with logout redirections and concurrent limit logins all in one place.
 
 == Description ==
 
@@ -100,7 +100,11 @@ Slim Stat Analytics: Users using "Slimstat Analytics" plugin version upto 4.6.2 
 
 == Changelog ==
 
-= 3.4.8 - January 21st, 2024 =
+= 3.4.9 - February 5th, 2025 =
+* Added: Compability fix with WLMS
+* Updated: Shows different text now when user is actively engaging when bottom countdown is enabled.
+
+= 3.4.8 - January 21st, 2025 =
 * Updated: Render method update.
 * Updated: Requires WordPress version 6.2
 * Fixed: Logged out popup message not showing when disable popup countdown is enabled.

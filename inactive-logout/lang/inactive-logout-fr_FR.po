@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Inactive Logout\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-26 08:15+0000\n"
-"PO-Revision-Date: 2024-08-29 05:26+0000\n"
+"PO-Revision-Date: 2025-02-05 12:23+0000\n"
 "Last-Translator: Deepen Bajracharya\n"
 "Language-Team: French (France)\n"
 "Language: fr_FR\n"
@@ -134,7 +134,7 @@ msgstr ""
 msgid "Close Modal Button Text"
 msgstr "Fermer le texte du bouton modal"
 
-#: core/Base.php:197 views/tabs/tpl-inactive-logout-basic.php:226
+#: core/Base.php:198 views/tabs/tpl-inactive-logout-basic.php:226
 msgid "Close without Reloading"
 msgstr "Fermer sans recharger"
 
@@ -150,7 +150,7 @@ msgstr ""
 msgid "Concurrent Login Settings"
 msgstr "Paramètres de connexion simultanée"
 
-#: core/Base.php:199 views/tabs/tpl-inactive-logout-basic.php:241
+#: core/Base.php:200 views/tabs/tpl-inactive-logout-basic.php:241
 msgid "Continue Browsing"
 msgstr "Continuer la navigation"
 
@@ -176,7 +176,7 @@ msgstr ""
 "%4$ssite%3$s pour les journaux des modifications récentes et les mises à "
 "jour."
 
-#: views/tabs/tpl-inactive-logout-support.php:59
+#: views/tabs/tpl-inactive-logout-support.php:63
 msgid "Developer"
 msgstr "Développeur"
 
@@ -200,6 +200,10 @@ msgstr ""
 msgid "Disable Timeout Countdown"
 msgstr "Désactiver le compte à rebours du délai"
 
+#: views/tabs/tpl-inactive-logout-support.php:49
+msgid "Documentation"
+msgstr ""
+
 #: views/tabs/tpl-inactive-logout-basic.php:134
 msgid "Enable Countdown?"
 msgstr "Activer le compte à rebours ?"
@@ -222,11 +226,16 @@ msgstr "Activer la redirection"
 msgid "Example"
 msgstr "Exemple"
 
+#: views/tabs/tpl-inactive-logout-support.php:50
+#, php-format
+msgid "Explore documentation: %s."
+msgstr ""
+
 #: views/tabs/tpl-inactive-logout-basic.php:158
 msgid "External Page Redirect"
 msgstr "Redirection vers une page externe"
 
-#: views/tabs/tpl-inactive-logout-support.php:60
+#: views/tabs/tpl-inactive-logout-support.php:64
 #, php-format
 msgid ""
 "Feel free to reach me from %1$s %2$sHere%3$s, if you have any questions or "
@@ -240,14 +249,14 @@ msgid "Force logout by admin on any users."
 msgstr "Déconnexion forcée par l'administrateur de n'importe quel utilisateur."
 
 #: views/tpl-inactive-logout-settings.php:43
-msgid "General Settings"
-msgstr "Paramètres généraux"
+msgid "General"
+msgstr ""
 
 #: core/Controllers/Admin/StoreController.php:60
 msgid "General Settings saved."
 msgstr "Paramètres généraux enregistrés."
 
-#: views/tpl-inactive-logout-settings.php:51
+#: views/tpl-inactive-logout-settings.php:54
 msgid "Go Pro"
 msgstr "Passer à la version Pro"
 
@@ -258,6 +267,11 @@ msgstr "Texte de l'en-tête"
 #: core/Base.php:70
 msgid "Heads up, Please backup before upgrade!"
 msgstr "Attention, veuillez sauvegarder avant de procéder à la mise à jour !"
+
+#. URI of the plugin
+#. Author URI of the plugin
+msgid "https://inactive-logout.com/"
+msgstr ""
 
 #: views/tabs/tpl-inactive-logout-basic.php:54
 msgid "Idle Message Content"
@@ -310,7 +324,11 @@ msgstr ""
 msgid "Limited to 24 hours i.e 1440 minutes."
 msgstr "Limité à 24 heures, soit 1440 minutes."
 
-#: core/Base.php:198
+#: views/tabs/tpl-inactive-logout-basic.php:212
+msgid "Localization Settings"
+msgstr ""
+
+#: core/Base.php:199
 msgid "Logging in. Please wait"
 msgstr "Connexion en cours. Veuillez patienter"
 
@@ -348,10 +366,6 @@ msgstr "Message à afficher lorsque l'écran de délai d'inactivité s'affiche."
 #: views/tabs/tpl-inactive-logout-basic.php:48
 msgid "Minute(s)"
 msgstr "Minutes"
-
-#: views/tabs/tpl-inactive-logout-basic.php:212
-msgid "Modal (Pop-Up) Settings"
-msgstr "Paramètres du modal (pop-up)"
 
 #: views/tabs/tpl-inactive-logout-support.php:20
 msgid "More options to role based settings."
@@ -395,7 +409,7 @@ msgstr ""
 msgid "OK"
 msgstr "D'accord"
 
-#: core/Base.php:196 core/Base.php:200
+#: core/Base.php:197 core/Base.php:201
 #: views/tabs/tpl-inactive-logout-basic.php:248
 msgid "Ok"
 msgstr "OK"
@@ -433,7 +447,7 @@ msgstr "Ticket de support premium"
 msgid "Prevent Multiple Logins"
 msgstr "Empêcher les connexions multiples"
 
-#: views/tabs/tpl-inactive-logout-support.php:54
+#: views/tabs/tpl-inactive-logout-support.php:58
 msgid "Rate Inactive Logout"
 msgstr "Évaluer Inactive Logout"
 
@@ -465,8 +479,8 @@ msgid "Reset Role Based Settings"
 msgstr "Réinitialiser les paramètres basés sur les rôles"
 
 #: views/tpl-inactive-logout-settings.php:46
-msgid "Role Based Settings"
-msgstr "Paramètres basés sur les rôles"
+msgid "Role Based"
+msgstr ""
 
 #: core/Controllers/Admin/StoreController.php:127
 msgid "Role based settings reset."
@@ -499,7 +513,7 @@ msgstr ""
 msgid "Session Logout Message"
 msgstr "Message de déconnexion de session"
 
-#: core/Base.php:201 views/tabs/tpl-inactive-logout-basic.php:219
+#: core/Base.php:202 views/tabs/tpl-inactive-logout-basic.php:219
 msgid "Session Timeout"
 msgstr "Expiration de la session"
 
@@ -522,7 +536,7 @@ msgstr ""
 "Définissez une durée d'expiration différente pour chaque rôle utilisateur. "
 "Définie en minutes."
 
-#: core/Base.php:256 views/tpl-inactive-logout-settings.php:21
+#: core/Base.php:259 views/tpl-inactive-logout-settings.php:21
 msgid "Settings"
 msgstr "Paramètres"
 
@@ -534,7 +548,7 @@ msgstr "Afficher le comportement du pop-up"
 msgid "Show Popup Message Only"
 msgstr "Afficher uniquement le message du pop-up"
 
-#: views/tpl-inactive-logout-settings.php:49
+#: views/tpl-inactive-logout-settings.php:52
 msgid "Support"
 msgstr "Support"
 
@@ -569,11 +583,10 @@ msgstr ""
 
 #: views/tabs/tpl-inactive-logout-basic.php:137
 msgid ""
-"This will show a countdown at the bottom of the screen indicating that user "
-"will be logged out in a defined period."
+"This will show a countdown at the bottom of the screen for both backend and "
+"frontend users - indicating that the user will be logged out in a defined "
+"period."
 msgstr ""
-"Cela affichera un compte à rebours en bas de l'écran indiquant que "
-"l'utilisateur sera déconnecté dans une période définie."
 
 #: views/tabs/tpl-inactive-logout-basic.php:104
 msgid ""
@@ -599,7 +612,7 @@ msgstr "À tous les utilisateurs (y compris les utilisateurs non authentifiés)"
 msgid "Track User Session and Logout individually."
 msgstr "Suivre la session utilisateur et la déconnexion individuellement."
 
-#: core/Base.php:223
+#: core/Base.php:224
 msgid "Tracking activity!"
 msgstr "Suivi de l'activité !"
 
@@ -614,6 +627,10 @@ msgid ""
 msgstr ""
 "Utilisez {wakup_timout} pour afficher les minutes. C'est le message qui "
 "s'affiche quand il est inactif."
+
+#: views/tpl-inactive-logout-settings.php:49
+msgid "User Based"
+msgstr ""
 
 #: views/tabs/tpl-inactive-logout-advanced.php:52
 msgid "User Role"
@@ -631,7 +648,7 @@ msgstr "Réveillez-vous !"
 msgid "Wakeup Button Text"
 msgstr "Texte du bouton de réveil"
 
-#: views/tabs/tpl-inactive-logout-support.php:49
+#: views/tabs/tpl-inactive-logout-support.php:53
 msgid "Want to Contribute with Translations?"
 msgstr "Vous souhaitez contribuer avec des traductions ?"
 
@@ -640,7 +657,7 @@ msgstr "Vous souhaitez contribuer avec des traductions ?"
 msgid "Warning Message Content"
 msgstr "Avertir le contenu du message"
 
-#: views/tabs/tpl-inactive-logout-support.php:50
+#: views/tabs/tpl-inactive-logout-support.php:54
 #, php-format
 msgid ""
 "We really appreciate and welcome translation contributions. Please send us "
@@ -650,7 +667,7 @@ msgstr ""
 "Veuillez nous envoyer un email à %s avec le fichier de traduction si vous "
 "voulez contribuer."
 
-#: views/tabs/tpl-inactive-logout-support.php:55
+#: views/tabs/tpl-inactive-logout-support.php:59
 #, php-format
 msgid ""
 "We really appreciate if you can spare a minute to %1$s %2$srate the "
@@ -684,15 +701,15 @@ msgstr ""
 "Vous avez été inactif pendant {wakup_timout}. Appuyez sur Continuer pour "
 "continuer votre navigation."
 
-#: core/Base.php:203
+#: core/Base.php:204
 msgid "You have been logged out because of inactivity."
 msgstr "Vous avez été déconnecté en raison de l'inactivité."
 
-#: core/Base.php:222 views/tabs/tpl-inactive-logout-basic.php:262
+#: core/Base.php:223 views/tabs/tpl-inactive-logout-basic.php:262
 msgid "You were last active on"
 msgstr "Vous avez été actif pour la dernière fois le"
 
-#: core/Base.php:221 views/tabs/tpl-inactive-logout-basic.php:255
+#: core/Base.php:222 views/tabs/tpl-inactive-logout-basic.php:255
 msgid "You will be logged out in"
 msgstr "Vous serez déconnecté dans"
 

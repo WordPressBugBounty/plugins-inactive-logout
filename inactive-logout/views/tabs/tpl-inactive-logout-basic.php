@@ -134,7 +134,7 @@ if ( 'custom-page-redirect' === $ina_redirect_page_link ) {
                         <th scope="row"><label for="ina_enable_debugger"><?php esc_html_e( 'Enable Countdown?', 'inactive-logout' ); ?></label></th>
                         <td>
                             <input name="ina_enable_debugger" type="checkbox" <?php echo ! empty( $ina_enable_debugger ) ? 'checked' : false; ?> id="ina_enable_debugger" value="1">
-                            <p class="description"><?php esc_html_e( 'This will show a countdown at the bottom of the screen indicating that user will be logged out in a defined period.', 'inactive-logout' ); ?></p>
+                            <p class="description"><?php esc_html_e( 'This will show a countdown at the bottom of the screen for both backend and frontend users - indicating that the user will be logged out in a defined period.', 'inactive-logout' ); ?></p>
                         </td>
                     </tr>
                     </tbody>
@@ -209,7 +209,7 @@ if ( 'custom-page-redirect' === $ina_redirect_page_link ) {
                     </tbody>
                 </table>
             </div>
-            <h4><?php esc_html_e( 'Modal (Pop-Up) Settings', 'inactive-logout' ); ?></h4>
+            <h4><?php esc_html_e( 'Localization Settings', 'inactive-logout' ); ?></h4>
             <div class="panel">
                 <table class="ina-form-tbl form-table">
                     <tbody>

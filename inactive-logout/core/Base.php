@@ -112,6 +112,7 @@ class Base {
 			Modal::instance();
 		}
 
+        Compatibility::getInstance();
 		AjaxController::getInstance();
 		Users::getInstance();
 		AdminController::getInstance();
