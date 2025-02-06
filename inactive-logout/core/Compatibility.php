@@ -5,12 +5,15 @@ namespace Codemanas\InactiveLogout;
 class Compatibility {
 
 	public function __construct() {
-		$this->removeWishListMemberRestrictions();
+		if ( is_admin() ) {
+			$this->removeWishListMemberRestrictions();
+		}
 	}
 
 	public function removeWishListMemberRestrictions() {
 		$removeActions = apply_filters( 'ina_removeWishListMemberRestrictions', true );
-		if ( is_plugin_active( 'wishlist-member/wpm.php' ) && $removeActions ) {
+		require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+		if ( function_exists( 'is_plugin_active' ) && is_plugin_active( 'wishlist-member/wpm.php' ) && $removeActions ) {
 			global $WishListMemberInstance;
 			remove_action( 'admin_enqueue_scripts', [ $WishListMemberInstance, 'remove_theme_and_plugins_scripts_and_styles' ], 999999999 );
 			remove_action( 'admin_head', [ $WishListMemberInstance, 'remove_theme_and_plugins_scripts_and_styles' ], 999999999 );

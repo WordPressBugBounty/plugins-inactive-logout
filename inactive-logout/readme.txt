@@ -4,7 +4,7 @@ Tags: security, idle logout, logout, user redirection, concurrent login limit
 Donate link: https://www.paypal.com/donate?hosted_button_id=2UCQKR868M9WE
 Requires at least: 6.2
 Tested up to: 6.7
-Stable tag: 3.4.9
+Stable tag: 3.4.10
 License: GPLv2 or later
 Requires PHP: 7.4
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -99,6 +99,9 @@ Slim Stat Analytics: Users using "Slimstat Analytics" plugin version upto 4.6.2 
 4. Multi User Role Screen
 
 == Changelog ==
+
+= 3.4.10 - February 6th, 2025 =
+* Fix: is_plugin_active function not including required file.
 
 = 3.4.9 - February 5th, 2025 =
 * Added: Compability fix with WLMS
