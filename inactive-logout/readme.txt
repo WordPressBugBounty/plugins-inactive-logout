@@ -3,8 +3,8 @@ Contributors: j__3rk
 Tags: security, idle logout, logout, user redirection, concurrent login limit
 Donate link: https://www.paypal.com/donate?hosted_button_id=2UCQKR868M9WE
 Requires at least: 6.2
-Tested up to: 6.7
-Stable tag: 3.4.10
+Tested up to: 6.8
+Stable tag: 3.4.11
 License: GPLv2 or later
 Requires PHP: 7.4
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -33,6 +33,7 @@ A simple plugin which is easy to configure and use. After installing and activat
 * Multiple User Role Configurations for individual timeout and session logout redirects.
 * Logout to custom page or existing page.
 * Clean UI
+* WooCommerce Supported.
 * Multisite Support: Override all sites with one setting.
 
 **EXTEND OTHER FEATURES:**
@@ -99,6 +100,10 @@ Slim Stat Analytics: Users using "Slimstat Analytics" plugin version upto 4.6.2 
 4. Multi User Role Screen
 
 == Changelog ==
+
+= 3.4.11 - April 16th, 2025 =
+* Minor bug fix related to date format conversion.
+* Bump version for WordPress 6.8 compatibility.
 
 = 3.4.10 - February 6th, 2025 =
 * Fix: is_plugin_active function not including required file.
