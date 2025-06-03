@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Inactive Logout\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-05 12:23+0000\n"
+"POT-Creation-Date: 2025-06-03 11:39+0000\n"
 "POT-Revision-Date: Sun Jan 29 2017 16:00:11 GMT+0545 (NPT)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Deepen Bajracharya <dpen.connectify@gmail.com>\n"
@@ -37,7 +37,7 @@ msgid ""
 "online status, session duration, role, os, IP)%4$s"
 msgstr ""
 
-#: views/tabs/tpl-inactive-logout-basic.php:232
+#: views/tabs/tpl-inactive-logout-basic.php:219
 msgid "After Logout Button Text"
 msgstr ""
 
@@ -66,11 +66,11 @@ msgid ""
 "Fully configurable & easy to use."
 msgstr ""
 
-#: views/tabs/tpl-inactive-logout-basic.php:253
+#: views/tabs/tpl-inactive-logout-basic.php:240
 msgid "Bottom Bar Countdown Text"
 msgstr ""
 
-#: views/tabs/tpl-inactive-logout-basic.php:260
+#: views/tabs/tpl-inactive-logout-basic.php:247
 msgid "Bottom Bar Last Active Text"
 msgstr ""
 
@@ -84,14 +84,14 @@ msgid ""
 "without any timeout grace."
 msgstr ""
 
-#: views/tabs/tpl-inactive-logout-basic.php:191
+#: views/tabs/tpl-inactive-logout-basic.php:178
 msgid ""
 "Check this option to disable automatic redirect after inactive popup; "
 "instead, the user will be redirected to a defined page upon clicking the "
 "\"OK\" button."
 msgstr ""
 
-#: views/tabs/tpl-inactive-logout-basic.php:228
+#: views/tabs/tpl-inactive-logout-basic.php:215
 msgid "Check this to hide this button"
 msgstr ""
 
@@ -107,11 +107,11 @@ msgid ""
 "multiple locations."
 msgstr ""
 
-#: views/tabs/tpl-inactive-logout-basic.php:224
+#: views/tabs/tpl-inactive-logout-basic.php:211
 msgid "Close Modal Button Text"
 msgstr ""
 
-#: core/Base.php:198 views/tabs/tpl-inactive-logout-basic.php:226
+#: core/Base.php:198 views/tabs/tpl-inactive-logout-basic.php:213
 msgid "Close without Reloading"
 msgstr ""
 
@@ -121,15 +121,15 @@ msgid ""
 "supported)."
 msgstr ""
 
-#: views/tabs/tpl-inactive-logout-basic.php:197
+#: views/tabs/tpl-inactive-logout-basic.php:184
 msgid "Concurrent Login Settings"
 msgstr ""
 
-#: core/Base.php:200 views/tabs/tpl-inactive-logout-basic.php:241
+#: core/Base.php:200 views/tabs/tpl-inactive-logout-basic.php:228
 msgid "Continue Browsing"
 msgstr ""
 
-#: views/tabs/tpl-inactive-logout-basic.php:239
+#: views/tabs/tpl-inactive-logout-basic.php:226
 msgid "Continue Button Text"
 msgstr ""
 
@@ -182,13 +182,13 @@ msgstr ""
 msgid "Enable Redirection"
 msgstr ""
 
-#: views/tabs/tpl-inactive-logout-basic.php:220
-#: views/tabs/tpl-inactive-logout-basic.php:227
-#: views/tabs/tpl-inactive-logout-basic.php:235
-#: views/tabs/tpl-inactive-logout-basic.php:242
-#: views/tabs/tpl-inactive-logout-basic.php:249
-#: views/tabs/tpl-inactive-logout-basic.php:256
-#: views/tabs/tpl-inactive-logout-basic.php:263
+#: views/tabs/tpl-inactive-logout-basic.php:207
+#: views/tabs/tpl-inactive-logout-basic.php:214
+#: views/tabs/tpl-inactive-logout-basic.php:222
+#: views/tabs/tpl-inactive-logout-basic.php:229
+#: views/tabs/tpl-inactive-logout-basic.php:236
+#: views/tabs/tpl-inactive-logout-basic.php:243
+#: views/tabs/tpl-inactive-logout-basic.php:250
 msgid "Example"
 msgstr ""
 
@@ -197,7 +197,7 @@ msgstr ""
 msgid "Explore documentation: %s."
 msgstr ""
 
-#: views/tabs/tpl-inactive-logout-basic.php:158
+#: views/tabs/tpl-inactive-logout-basic.php:157
 msgid "External Page Redirect"
 msgstr ""
 
@@ -224,7 +224,7 @@ msgstr ""
 msgid "Go Pro"
 msgstr ""
 
-#: views/tabs/tpl-inactive-logout-basic.php:217
+#: views/tabs/tpl-inactive-logout-basic.php:204
 msgid "Header Text"
 msgstr ""
 
@@ -263,7 +263,7 @@ msgstr ""
 msgid "Inactive User Logout Settings"
 msgstr ""
 
-#: core/Helpers.php:166 legacy/class-inactive-logout-helpers.php:228
+#: core/Helpers.php:137 legacy/class-inactive-logout-helpers.php:228
 msgid ""
 "Is inactive logout or few functionalities not working for you ? Might be "
 "because you have added this user role in Role Based tab ?"
@@ -277,7 +277,7 @@ msgstr ""
 msgid "Limited to 24 hours i.e 1440 minutes."
 msgstr ""
 
-#: views/tabs/tpl-inactive-logout-basic.php:212
+#: views/tabs/tpl-inactive-logout-basic.php:199
 msgid "Localization Settings"
 msgstr ""
 
@@ -340,10 +340,6 @@ msgstr ""
 msgid "Need more features ?"
 msgstr ""
 
-#: views/tabs/tpl-inactive-logout-basic.php:176
-msgid "No Posts Found."
-msgstr ""
-
 #: core/Controllers/AdminController.php:36
 msgid "Not allowed"
 msgstr ""
@@ -354,12 +350,12 @@ msgid ""
 "idle timeout selected for each individual user role."
 msgstr ""
 
-#: views/tabs/tpl-inactive-logout-basic.php:234
+#: views/tabs/tpl-inactive-logout-basic.php:221
 msgid "OK"
 msgstr ""
 
 #: core/Base.php:197 core/Base.php:201
-#: views/tabs/tpl-inactive-logout-basic.php:248
+#: views/tabs/tpl-inactive-logout-basic.php:235
 msgid "Ok"
 msgstr ""
 
@@ -390,7 +386,7 @@ msgstr ""
 msgid "Premium Support Ticket"
 msgstr ""
 
-#: views/tabs/tpl-inactive-logout-basic.php:202
+#: views/tabs/tpl-inactive-logout-basic.php:189
 msgid "Prevent Multiple Logins"
 msgstr ""
 
@@ -433,11 +429,11 @@ msgid "Role based settings saved."
 msgstr ""
 
 #: views/tabs/tpl-inactive-logout-advanced.php:125
-#: views/tabs/tpl-inactive-logout-basic.php:272
+#: views/tabs/tpl-inactive-logout-basic.php:259
 msgid "Save Changes"
 msgstr ""
 
-#: views/tabs/tpl-inactive-logout-basic.php:272
+#: views/tabs/tpl-inactive-logout-basic.php:259
 msgid "Saving.. Please wait"
 msgstr ""
 
@@ -445,15 +441,17 @@ msgstr ""
 msgid "Second(s)"
 msgstr ""
 
-#: views/tabs/tpl-inactive-logout-basic.php:184
-msgid "Select a page to redirect to after session timeout and clicking OK."
+#: views/tabs/tpl-inactive-logout-basic.php:171
+msgid ""
+"Select a page to redirect to after session timeout and clicking OK. Search "
+"for \"External page redirect\" in order to apply external page redirect."
 msgstr ""
 
 #: views/tabs/tpl-inactive-logout-basic.php:70
 msgid "Session Logout Message"
 msgstr ""
 
-#: core/Base.php:202 views/tabs/tpl-inactive-logout-basic.php:219
+#: core/Base.php:202 views/tabs/tpl-inactive-logout-basic.php:206
 msgid "Session Timeout"
 msgstr ""
 
@@ -500,7 +498,7 @@ msgstr ""
 msgid "This will enable multi-user role timeout functionality."
 msgstr ""
 
-#: views/tabs/tpl-inactive-logout-basic.php:205
+#: views/tabs/tpl-inactive-logout-basic.php:192
 msgid "This will prevent the same user from logging in at multiple locations."
 msgstr ""
 
@@ -537,7 +535,7 @@ msgstr ""
 msgid "Tracking activity!"
 msgstr ""
 
-#: views/tabs/tpl-inactive-logout-basic.php:188
+#: views/tabs/tpl-inactive-logout-basic.php:175
 msgid "Turn off Automatic Redirect"
 msgstr ""
 
@@ -563,7 +561,7 @@ msgstr ""
 msgid "Wakeup !"
 msgstr ""
 
-#: views/tabs/tpl-inactive-logout-basic.php:246
+#: views/tabs/tpl-inactive-logout-basic.php:233
 msgid "Wakeup Button Text"
 msgstr ""
 
@@ -611,11 +609,11 @@ msgstr ""
 msgid "You have been logged out because of inactivity."
 msgstr ""
 
-#: core/Base.php:223 views/tabs/tpl-inactive-logout-basic.php:262
+#: core/Base.php:223 views/tabs/tpl-inactive-logout-basic.php:249
 msgid "You were last active on"
 msgstr ""
 
-#: core/Base.php:222 views/tabs/tpl-inactive-logout-basic.php:255
+#: core/Base.php:222 views/tabs/tpl-inactive-logout-basic.php:242
 msgid "You will be logged out in"
 msgstr ""
 

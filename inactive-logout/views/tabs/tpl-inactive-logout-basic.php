@@ -154,34 +154,21 @@ if ( 'custom-page-redirect' === $ina_redirect_page_link ) {
                         <tr class="show_on_enable_redirect_link" <?php echo ! empty( $ina_enable_redirect ) ? 'style="display:table-row;"' : 'style="display:none;"'; ?>>
                             <th scope="row"><label for="ina_redirect_page"><?php esc_html_e( 'Redirect Page', 'inactive-logout' ); ?></label></th>
                             <td>
-                                <select name="ina_redirect_page" class="ina_redirect_page regular-text">
-                                    <option value="custom-page-redirect"><?php esc_html_e( 'External Page Redirect', 'inactive-logout' ); ?></option>
+                                <select name="ina_redirect_page" data-external-redirect-text="<?php esc_html_e( 'External Page Redirect', 'inactive-logout' ); ?>" class="ina_redirect_page regular-text">
 									<?php
-									$posts = \Codemanas\InactiveLogout\Helpers::getAllPostsPages();
-									if ( ! empty( $posts ) ) {
-										foreach ( $posts as $k => $post_types ) {
-											?>
-                                            <optgroup label="<?php echo ucfirst( $k ); ?>">
-												<?php foreach ( $post_types as $post_type ) { ?>
-                                                    <option <?php echo ! empty( $ina_redirect_page_link ) && ( absint( $ina_redirect_page_link ) === $post_type['ID'] ) ? esc_attr( 'selected' ) : ''; ?>
-                                                            value="<?php echo esc_attr( $post_type['ID'] ); ?>">
-														<?php echo esc_html( $post_type['title'] ); ?>
-                                                    </option>
-												<?php } ?>
-                                            </optgroup>
-											<?php
+									if ( ! empty( $ina_redirect_page_link ) ) {
+										if ( $ina_redirect_page_link === "custom-page-redirect" ) {
+											echo "<option selected value='custom-page-redirect'>" . esc_html( 'External Page Redirect', 'inactive-logout' ) . "</option>";
+										} else {
+											echo "<option selected value='" . $ina_redirect_page_link . "'>" . get_the_title( $ina_redirect_page_link ) . "</option>";
 										}
-									} else {
-										?>
-                                        <option value=""><?php esc_html_e( 'No Posts Found.', 'inactive-logout' ); ?></option>
-										<?php
 									}
 									?>
                                 </select>
                                 <span id="show_if_custom_redirect" <?php echo ! empty( $ina_enable_redirect ) ? false : 'style=display:none;'; ?> <?php echo ! empty( $ina_redirect_page_link ) && 'custom-page-redirect' === $ina_redirect_page_link ? false : 'style="display:none;"'; ?>>
                     => <input name="custom_redirect_text_field" type="url" id="custom_redirect_text_field" class="regular-text code" placeholder="https://www.imdpen.com" value="<?php echo ( ! empty( $custom_redirect_text_field ) ) ? esc_attr( $custom_redirect_text_field ) : false; ?>">
                     </span>
-                                <p class="description"><?php esc_html_e( 'Select a page to redirect to after session timeout and clicking OK.', 'inactive-logout' ); ?></p>
+                                <p class="description"><?php esc_html_e( 'Select a page to redirect to after session timeout and clicking OK. Search for "External page redirect" in order to apply external page redirect.', 'inactive-logout' ); ?></p>
                             </td>
                         </tr>
                         <tr class="show_on_enable_redirect_link" <?php echo ! empty( $ina_enable_redirect ) ? 'style="display:table-row;"' : 'style="display:none;"'; ?>>

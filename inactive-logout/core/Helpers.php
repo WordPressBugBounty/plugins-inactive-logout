@@ -41,35 +41,6 @@ class Helpers {
 	}
 
 	/**
-	 * Get All Pages and Posts
-	 *
-	 * @return array
-	 * @since  1.2.0
-	 */
-	public static function getAllPostsPages() {
-		$result = array();
-		$pages  = get_posts( array(
-			'order'          => 'ASC',
-			'posts_per_page' => - 1,
-			'post_type'      => apply_filters( 'ina_free_get_custom_post_types', array( 'post', 'page' ) ),
-			'post_status'    => 'publish',
-		) );
-
-		if ( ! empty( $pages ) ) {
-			foreach ( $pages as $page ) {
-				$result[ $page->post_type ][] = array(
-					'ID'        => $page->ID,
-					'title'     => $page->post_title,
-					'permalink' => get_the_permalink( $page->ID ),
-					'post_type' => $page->post_type,
-				);
-			}
-		}
-
-		return $result;
-	}
-
-	/**
 	 * Check role is available in settings for multi-user.
 	 *
 	 * @param  null|string  $role  Name of role, default is null.

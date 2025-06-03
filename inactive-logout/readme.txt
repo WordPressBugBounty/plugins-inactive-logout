@@ -4,7 +4,7 @@ Tags: security, idle logout, logout, user redirection, concurrent login limit
 Donate link: https://www.paypal.com/donate?hosted_button_id=2UCQKR868M9WE
 Requires at least: 6.2
 Tested up to: 6.8
-Stable tag: 3.4.11
+Stable tag: 3.4.12
 License: GPLv2 or later
 Requires PHP: 7.4
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -100,6 +100,11 @@ Slim Stat Analytics: Users using "Slimstat Analytics" plugin version upto 4.6.2 
 4. Multi User Role Screen
 
 == Changelog ==
+
+= 3.4.12 - June 3rd, 2025 =
+* Fixed: Inactive logout settings page crash when there are huge number of posts and pages.
+* Refactor: Removed unused code.
+* Refactor: Concurrent Login checks
 
 = 3.4.11 - April 16th, 2025 =
 * Minor bug fix related to date format conversion.
