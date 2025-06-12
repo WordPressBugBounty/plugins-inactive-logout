@@ -30,11 +30,11 @@ class Helpers {
 	 * @return array List of roles.
 	 */
 	public static function getAllRoles() {
-		$result = array();
+		global $wp_roles;
 
-		$roles = get_editable_roles();
-		foreach ( $roles as $role => $role_name ) {
-			$result[ $role ] = $role_name['name'];
+		$result = array();
+		foreach ( $wp_roles->roles as $role => $details ) {
+			$result[ $role ] = $details['name'];
 		}
 
 		return $result;
