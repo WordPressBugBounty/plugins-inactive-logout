@@ -13,6 +13,7 @@ class Users {
 	public function logoutSession() {
 		check_ajax_referer( '_inaajax', 'security' );
 		if ( is_user_logged_in() ) {
+			set_transient( 'ina_redirection_logged_out', true, 120 );
 			wp_logout();
 		}
 

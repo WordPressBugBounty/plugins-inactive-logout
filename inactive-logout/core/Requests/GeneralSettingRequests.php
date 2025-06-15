@@ -21,6 +21,7 @@ class GeneralSettingRequests {
 			'warn_message'                         => wp_kses_post( filter_input( INPUT_POST, 'ina_show_warn_message' ) ),
 			'concurrent_login'                     => filter_input( INPUT_POST, 'ina_disable_multiple_login', FILTER_SANITIZE_NUMBER_INT ),
 			'enable_redirect'                      => filter_input( INPUT_POST, 'ina_enable_redirect_link', FILTER_SANITIZE_NUMBER_INT ),
+			'after_redirection_toast_message'      => filter_input( INPUT_POST, 'ina_after_redirection_toast_message' ),
 			'redirect_page_link'                   => filter_input( INPUT_POST, 'ina_redirect_page' ),
 			'enable_debugger'                      => filter_input( INPUT_POST, 'ina_enable_debugger' ),
 			'disable_close_without_reload'         => filter_input( INPUT_POST, 'popup_modal_close_without_reload_hide' ),

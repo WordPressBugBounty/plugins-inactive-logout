@@ -4,7 +4,7 @@ Tags: security, idle logout, logout, user redirection, concurrent login limit
 Donate link: https://www.paypal.com/donate?hosted_button_id=2UCQKR868M9WE
 Requires at least: 6.2
 Tested up to: 6.8
-Stable tag: 3.4.13
+Stable tag: 3.5.0
 License: GPLv2 or later
 Requires PHP: 7.4
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -100,6 +100,13 @@ Slim Stat Analytics: Users using "Slimstat Analytics" plugin version upto 4.6.2 
 4. Multi User Role Screen
 
 == Changelog ==
+
+= 3.5.0 - June 15th, 2025
+* Added: Option for no role assigned users in role based settings.
+* Added: Toast notification after logout redirection.
+* Changes: Idle countdown bar fixes.
+* Fixed: Instant logout if disable countdown is set.
+* Optimized: User Query calls for advanced settings.
 
 = 3.4.13 - June 12th, 2025 =
 * Fixed: All roles not showing in role based setting.

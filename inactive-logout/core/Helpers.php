@@ -37,6 +37,8 @@ class Helpers {
 			$result[ $role ] = $details['name'];
 		}
 
+		$result['no_role'] = 'No User Roles assigned users';
+
 		return $result;
 	}
 
@@ -63,52 +65,59 @@ class Helpers {
 		return $selected;
 	}
 
+	private static function get_bool_option( $key, $default = false ) {
+		return (bool) Helpers::get_option( $key ) ?? $default;
+	}
+
+	private static function get_option_with_default( $key, $default ) {
+		$value = Helpers::get_option( $key );
+
+		return ! empty( $value ) ? $value : $default;
+	}
+
+	public static function getSettings( $type = '' ) {
+		$settings = get_option( '__ina_general_settings' );
+		if ( ! empty( $type ) ) {
+			return $settings[ $type ];
+		}
+
+		return $settings;
+	}
+
 	/**
 	 * Get inactive logout settings
 	 *
 	 * @return \stdClass
 	 */
 	public static function getInactiveSettingsData() {
-		$logout_time            = Helpers::get_option( '__ina_logout_time' );
-		$countdown_time         = Helpers::get_option( '__ina_countdown_timeout' );
-		$disable_countdown      = Helpers::get_option( '__ina_disable_countdown' );
-		$warn_only              = Helpers::get_option( '__ina_warn_message_enabled' );
-		$popup_behaviour        = Helpers::get_option( '__ina_popup_behaviour' );
-		$concurrent_login       = Helpers::get_option( '__ina_concurrent_login' );
-		$ina_enable_redirect    = Helpers::get_option( '__ina_enable_redirect' );
-		$ina_redirect_page_link = Helpers::get_option( '__ina_redirect_page_link' );
-		$automatic_redirect     = Helpers::get_option( '__ina_disable_automatic_redirect_on_logout' );
-		$debugger               = Helpers::get_option( '__ina_enable_debugger' );
-
 		$settings                         = new \stdClass();
-		$settings->logout_time            = ! empty( $logout_time ) ? $logout_time : 15 * 60;
-		$settings->prompt_countdown_timer = ! empty( $countdown_time ) ? $countdown_time : 10;
-		$settings->disable_prompt_timer   = ! empty( $disable_countdown );
-		$settings->warn_only_enable       = ! empty( $warn_only );
-		$settings->popup_behaviour        = ! empty( $warn_only ) && ! empty( $popup_behaviour ) ? $popup_behaviour : false;
-		$settings->concurrent_enabled     = ! empty( $concurrent_login );
-		$settings->enabled_redirect       = ! empty( $ina_enable_redirect );
-		$settings->redirect_page_link     = ! empty( $ina_redirect_page_link ) ? $ina_redirect_page_link : false;
-		$settings->automatic_redirect     = ! empty( $automatic_redirect );
-		$settings->debugger               = ! empty( $debugger );
+		$settings->logout_time            = self::get_option_with_default( '__ina_logout_time', 15 * 60 );
+		$settings->prompt_countdown_timer = self::get_option_with_default( '__ina_countdown_timeout', 10 );
+		$settings->disable_prompt_timer   = self::get_bool_option( '__ina_disable_countdown' );
+		$settings->warn_only_enable       = self::get_bool_option( '__ina_warn_message_enabled' );
+		$settings->popup_behaviour        = ( $settings->warn_only_enable && ! empty( Helpers::get_option( '__ina_popup_behaviour' ) ) ) ? Helpers::get_option( '__ina_popup_behaviour' ) : false;
+		$settings->concurrent_enabled     = self::get_bool_option( '__ina_concurrent_login' );
+		$settings->enabled_redirect       = self::get_bool_option( '__ina_enable_redirect' );
+		$settings->redirect_page_link     = self::get_option_with_default( '__ina_redirect_page_link', false );
+		$settings->automatic_redirect     = self::get_bool_option( '__ina_disable_automatic_redirect_on_logout' );
+		$settings->debugger               = self::get_bool_option( '__ina_enable_debugger' );
 
-		$enabledMultiUser = Helpers::get_option( '__ina_enable_timeout_multiusers' );
-		if ( $enabledMultiUser ) {
+		if ( ! empty( Helpers::get_option( '__ina_enable_timeout_multiusers' ) ) ) {
 			global $current_user;
-			$multiSetting      = false;
-			$multiUserSettings = Helpers::get_option( '__ina_multiusers_settings' );
-			if ( ! empty( $multiUserSettings ) && ! empty( $current_user->roles ) ) {
-				foreach ( $multiUserSettings as $ina_multiuser_setting ) {
-					if ( in_array( $ina_multiuser_setting['role'], $current_user->roles, true ) ) {
-						$multiUserSettings = $ina_multiuser_setting;
-						$multiSetting      = true;
-						break;
+			$user_roles          = $current_user->roles ?? [];
+			$multi_user_settings = Helpers::get_option( '__ina_multiusers_settings' ) ?? [];
+			if ( ! empty( $multi_user_settings ) ) {
+				$result = array_values( array_filter( $multi_user_settings, function ( $data ) use ( $user_roles ) {
+					if ( empty( $user_roles ) ) {
+						return isset( $data['role'] ) && $data['role'] === 'no_role';
 					}
-				}
-			}
 
-			if ( $multiSetting ) {
-				$settings->advanced = $multiUserSettings;
+					return isset( $data['role'] ) && in_array( $data['role'], $user_roles, true );
+				} ) );
+
+				if ( ! empty( $result ) ) {
+					$settings->advanced = $result[0];
+				}
 			}
 		}
 
@@ -127,43 +136,6 @@ class Helpers {
 		} else {
 			return false;
 		}
-	}
-
-	public static function show_advanced_enable_notification() {
-		$ina_multiuser_timeout_enabled = self::get_option( '__ina_enable_timeout_multiusers' );
-		if ( ! empty( $ina_multiuser_timeout_enabled ) ) {
-			?>
-            <div id="message" class="notice notice-warning">
-                <p><?php esc_html_e( 'Is inactive logout or few functionalities not working for you ? Might be because you have added this user role in Role Based tab ?', 'inactive-logout' ); ?></p>
-            </div>
-			<?php
-		}
-	}
-
-	/**
-	 * Get Overridden multisite setting - Just here for backwards compatibility.
-	 *
-	 * Will be removed in next major release.
-	 *
-	 * @param $key
-	 *
-	 * @return mixed|void
-	 * @deprecated since 3.1.1
-	 */
-	public static function get_overrided_option( $key ) {
-		if ( is_multisite() ) {
-			$network_id = get_main_network_id();
-			$override   = get_network_option( $network_id, '__ina_overrideby_multisite_setting' ) ? true : false;
-			if ( $override ) {
-				$result = get_network_option( $network_id, $key );
-			} else {
-				$result = self::get_option( $key );
-			}
-		} else {
-			$result = self::get_option( $key );
-		}
-
-		return $result;
 	}
 
 	/**
@@ -200,6 +172,7 @@ class Helpers {
 	 *
 	 * @param $key
 	 * @param $value
+	 * @param  bool  $autoload
 	 */
 	public static function update_option( $key, $value, $autoload = true ) {
 		if ( self::isMultisite() ) {

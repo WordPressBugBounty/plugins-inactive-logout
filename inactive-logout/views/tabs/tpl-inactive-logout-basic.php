@@ -19,6 +19,7 @@ $ina_enable_debugger            = \Codemanas\InactiveLogout\Helpers::get_option(
 $ina_popup_modal                = \Codemanas\InactiveLogout\Helpers::get_option( '__ina_logout_popup_localizations' );
 $ina_close_without_reload       = \Codemanas\InactiveLogout\Helpers::get_option( '__ina_disable_close_without_reload' );
 $ina_disable_automatic_redirect = \Codemanas\InactiveLogout\Helpers::get_option( '__ina_disable_automatic_redirect_on_logout' );
+$inaSettings                    = \Codemanas\InactiveLogout\Helpers::getSettings();
 
 // IF redirect is custom page link.
 if ( 'custom-page-redirect' === $ina_redirect_page_link ) {
@@ -76,7 +77,7 @@ if ( 'custom-page-redirect' === $ina_redirect_page_link ) {
 								'textarea_rows' => 5,
 							);
 							$message_content = \Codemanas\InactiveLogout\Helpers::get_option( '__ina_after_logout_message' );
-							$content         = $message_content ? $message_content : '<p>You have been logged out because of inactivity.</p>';
+							$content         = $message_content ?: '<p>You have been logged out because of inactivity.</p>';
 							wp_editor( $content, 'after_session_logout_message', $settings );
 							?>
                             <p class="description"><?php esc_html_e( 'Message to be shown when idle timeout screen shows.', 'inactive-logout' ); ?></p>
@@ -176,6 +177,13 @@ if ( 'custom-page-redirect' === $ina_redirect_page_link ) {
                             <td>
                                 <input name="ina_disable_automatic_redirect" type="checkbox" <?php echo ! empty( $ina_disable_automatic_redirect ) ? 'checked' : false; ?> id="ina_disable_automatic_redirect" value="1">
                                 <p class="description"><?php esc_html_e( 'Check this option to disable automatic redirect after inactive popup; instead, the user will be redirected to a defined page upon clicking the "OK" button.', 'inactive-logout' ); ?></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><label for="ina_after_redirection_toast_message"><?php esc_html_e( 'After redirection message', 'inactive-logout' ); ?></label></th>
+                            <td>
+                                <input class="regular-text" style="width: 100%;" name="ina_after_redirection_toast_message" type="text" value="<?php echo ! empty( $inaSettings['after_redirection_toast_message'] ) ? esc_html( $inaSettings['after_redirection_toast_message'] ) : 'You have been automatically logged out due to inactivity.'; ?>">
+                                <p class="description"><?php esc_html_e( 'Replace your message here to show whenever a redirection logout is successful. Only applicable on redirection logout. No HTML allowed here.', 'inactive-logout' ); ?></p>
                             </td>
                         </tr>
                     </table>

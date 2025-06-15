@@ -108,11 +108,12 @@ class Base {
 	 */
 	public function loadDependencies() {
 		$disable_feature = ! empty( $this->settings->advanced['disabled_feature'] ) ? $this->settings->advanced['disabled_feature'] : false;
-		if ( ! $disable_feature && ( is_user_logged_in() || $this->settings->popup_behaviour == "2" ) ) {
+		if ( ! $disable_feature ) {
+			#if ( ! $disable_feature && ( is_user_logged_in() || $this->settings->popup_behaviour == "2" ) ) {
 			Modal::instance();
 		}
 
-        Compatibility::getInstance();
+		Compatibility::getInstance();
 		AjaxController::getInstance();
 		Users::getInstance();
 		AdminController::getInstance();
@@ -161,6 +162,7 @@ class Base {
 
 			$disable_feature = false;
 			$ina_logout_time = $this->settings->logout_time;
+
 			//if advanced options
 			if ( ! empty( $this->settings->advanced ) ) {
 				$ina_logout_time = ! empty( $this->settings->advanced['timeout'] ) ? $this->settings->advanced['timeout'] * 60 : 15 * 60;
