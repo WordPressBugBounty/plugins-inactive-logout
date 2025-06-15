@@ -16,6 +16,7 @@ class Modal {
 		add_action( 'wp_head', [ $this, 'toastStyles' ] );
 		add_action( 'login_footer', [ $this, 'toastContent' ] );
 		add_action( 'login_head', [ $this, 'toastStyles' ] );
+		add_action( 'template_redirect', [ $this, 'maybeClearToastFlag' ] );
 	}
 
 	/**
@@ -133,12 +134,17 @@ class Modal {
                 });
             </script>
 			<?php
-			delete_transient( 'ina_redirection_logged_out' );
 		}
 	}
 
 	private function showToast() {
-		return get_transient( 'ina_redirection_logged_out' );
+		return ! empty( $_COOKIE['ina_redirection_logged_out'] );
+	}
+
+	public function maybeClearToastFlag() {
+		if ( isset( $_COOKIE['ina_redirection_logged_out'] ) ) {
+			setcookie( 'ina_redirection_logged_out', '', time() - 3600, '/' );
+		}
 	}
 
 	private static $_instance = null;
