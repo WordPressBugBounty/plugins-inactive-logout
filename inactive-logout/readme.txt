@@ -4,7 +4,7 @@ Tags: security, idle logout, logout, user redirection, concurrent login limit
 Donate link: https://www.paypal.com/donate?hosted_button_id=2UCQKR868M9WE
 Requires at least: 6.2
 Tested up to: 6.8
-Stable tag: 3.5.2
+Stable tag: 3.5.3
 License: GPLv2 or later
 Requires PHP: 7.4
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -100,6 +100,10 @@ Slim Stat Analytics: Users using "Slimstat Analytics" plugin version upto 4.6.2 
 4. Multi User Role Screen
 
 == Changelog ==
+
+= 3.5.3 - June 18th, 2025 =
+* Added: Toast message turn on and off setting.
+* Changed: Toast message by default is off.
 
 = 3.5.2 - June 17th, 2025 =
 * Fix: "Timeout Countdown Period" stayed at the defined value unless enabled countdown option was enabled.

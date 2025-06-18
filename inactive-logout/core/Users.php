@@ -13,7 +13,7 @@ class Users {
 	public function logoutSession() {
 		check_ajax_referer( '_inaajax', 'security' );
 		if ( is_user_logged_in() ) {
-			setcookie( 'ina_redirection_logged_out', true, time() + 120, "/" );
+			$this->setToastMessage();
 			wp_logout();
 		}
 
@@ -22,6 +22,12 @@ class Users {
 		) );
 
 		wp_die();
+	}
+
+	private function setToastMessage() {
+		if ( ! empty( Helpers::getSettings( 'show_toast_notification' ) ) ) {
+			setcookie( 'ina_redirection_logged_out', true, time() + 120, "/" );
+		}
 	}
 
 	private static ?Users $_instance = null;

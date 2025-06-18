@@ -3,6 +3,7 @@
 namespace Codemanas\InactiveLogout\Backend;
 
 use Codemanas\InactiveLogout\Helpers;
+use Codemanas\InactiveLogout\Modal;
 
 class Common {
 
@@ -21,6 +22,17 @@ class Common {
 
 		// The Query
 		return new \WP_Query( $args );
+	}
+
+	public function triggerDemoToast() {
+		$message = Helpers::getSettings( 'after_redirection_toast_message' );
+		$message = ! empty( $message ) ? $message : 'You have been automatically logged out due to inactivity';
+		$modal   = Modal::instance();
+		$content = $modal->getToastStyle();
+		$content .= $modal->getToastHTML( $message );
+		wp_send_json( $content );
+
+		wp_die();
 	}
 
 	public function filterPostPagesUrl() {

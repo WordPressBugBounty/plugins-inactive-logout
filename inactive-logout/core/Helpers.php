@@ -75,10 +75,17 @@ class Helpers {
 		return ! empty( $value ) ? $value : $default;
 	}
 
+	/**
+     * Get whole settings or a desired setting
+     *
+	 * @param $type
+	 *
+	 * @return false|mixed|string|null
+	 */
 	public static function getSettings( $type = '' ) {
 		$settings = get_option( '__ina_general_settings' );
 		if ( ! empty( $type ) ) {
-			return $settings[ $type ];
+			return ! empty( $settings[ $type ] ) ? $settings[ $type ] : '';
 		}
 
 		return $settings;

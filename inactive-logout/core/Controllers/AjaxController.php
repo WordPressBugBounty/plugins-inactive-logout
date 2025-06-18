@@ -22,7 +22,8 @@ class AjaxController {
 			'ina_get_pages_for_redirection'      => [ $commonController, 'filterPostPagesUrl' ],
 			'ina_get_post_types_for_redirection' => [ $commonController, 'filterPostPagesId' ],
 			'ina_dismiss_like_notice'            => [ $commonController, 'dismissNotices' ],
-			'ina_logout_session'                 => [ Users::getInstance(), 'logoutSession' ]
+			'ina_logout_session'                 => [ Users::getInstance(), 'logoutSession' ],
+			'ina_trigger_demo_toast'             => [ $commonController, 'triggerDemoToast' ]
 		];
 	}
 

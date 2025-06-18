@@ -132,6 +132,20 @@ if ( 'custom-page-redirect' === $ina_redirect_page_link ) {
                         </td>
                     </tr>
                     <tr>
+                        <th scope="row"><label for="ina_show_toast_notification"><?php esc_html_e( 'Display Logout Toast Notification', 'inactive-logout' ); ?></label></th>
+                        <td>
+                            <input name="ina_show_toast_notification" type="checkbox" id="ina_show_toast_notification" <?php echo ! empty( $inaSettings['show_toast_notification'] ) ? 'checked' : ''; ?> value="1">
+                            <p class="description"><?php esc_html_e( 'Enable this to show a notification informing the user that they have been logged out due to inactivity. Will show after redirect or clicking the ok button.', 'inactive-logout' ); ?> => <a href="javascript:void(0);" style="color:red;" class="ina-trigger-front-toast-notification">Try it out!</a></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="ina_after_redirection_toast_message"><?php esc_html_e( 'Toast Message', 'inactive-logout' ); ?></label></th>
+                        <td>
+                            <input class="regular-text" style="width: 100%;" name="ina_after_redirection_toast_message" type="text" value="<?php echo ! empty( $inaSettings['after_redirection_toast_message'] ) ? esc_html( $inaSettings['after_redirection_toast_message'] ) : 'You have been automatically logged out due to inactivity.'; ?>">
+                            <p class="description"><?php esc_html_e( 'Replace your message here; which is displayed in a toast notification confirming successful logout whenever an inactive user is automatically logged out (Applicable only when "Show Logout Toast Message" is enabled)', 'inactive-logout' ); ?></p>
+                        </td>
+                    </tr>
+                    <tr>
                         <th scope="row"><label for="ina_enable_debugger"><?php esc_html_e( 'Enable Countdown?', 'inactive-logout' ); ?></label></th>
                         <td>
                             <input name="ina_enable_debugger" type="checkbox" <?php echo ! empty( $ina_enable_debugger ) ? 'checked' : false; ?> id="ina_enable_debugger" value="1">
@@ -177,13 +191,6 @@ if ( 'custom-page-redirect' === $ina_redirect_page_link ) {
                             <td>
                                 <input name="ina_disable_automatic_redirect" type="checkbox" <?php echo ! empty( $ina_disable_automatic_redirect ) ? 'checked' : false; ?> id="ina_disable_automatic_redirect" value="1">
                                 <p class="description"><?php esc_html_e( 'Check this option to disable automatic redirect after inactive popup; instead, the user will be redirected to a defined page upon clicking the "OK" button.', 'inactive-logout' ); ?></p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><label for="ina_after_redirection_toast_message"><?php esc_html_e( 'After redirection message', 'inactive-logout' ); ?></label></th>
-                            <td>
-                                <input class="regular-text" style="width: 100%;" name="ina_after_redirection_toast_message" type="text" value="<?php echo ! empty( $inaSettings['after_redirection_toast_message'] ) ? esc_html( $inaSettings['after_redirection_toast_message'] ) : 'You have been automatically logged out due to inactivity.'; ?>">
-                                <p class="description"><?php esc_html_e( 'Replace your message here to show whenever a redirection logout is successful. Only applicable on redirection logout. No HTML allowed here.', 'inactive-logout' ); ?></p>
                             </td>
                         </tr>
                     </table>
