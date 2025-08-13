@@ -230,7 +230,7 @@ class Base {
 				$data['settings'] = apply_filters( 'ina_logout_settings', $data['settings'] );
 
 				$dependencies = require_once INACTIVE_LOGOUT_DIR_PATH . 'build/index.asset.php';
-				$dependencies = ! empty( $dependencies ) ? $dependencies['dependencies'] : [];
+				$dependencies = ! empty( $dependencies ) && ! empty( $dependencies['dependencies'] ) ? $dependencies['dependencies'] : [];
 
 				wp_enqueue_style( 'inactive-logout', INACTIVE_LOGOUT_BUILD_URI . '/index.css', false, INACTIVE_LOGOUT_VERSION );
 				wp_enqueue_script( 'inactive-logout', INACTIVE_LOGOUT_BUILD_URI . '/index.js', $dependencies, INACTIVE_LOGOUT_VERSION, true );

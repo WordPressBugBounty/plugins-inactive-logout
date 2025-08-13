@@ -7,14 +7,14 @@
  * Plugin Name:       Inactive Logout
  * Plugin URI:        https://inactive-logout.com/
  * Description:       Automatically logout idle user sessions, even if they are on the front end! Fully configurable & easy to use.
- * Version:           3.5.3
+ * Version:           3.5.4
  * Author:            Inactive Logout
  * Author URI:        https://inactive-logout.com/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       inactive-logout
  * Domain Path:       /lang
- * Requires at least: 6.2
+ * Requires at least: 6.6
  * Requires PHP:      7.4
  **/
 
@@ -30,7 +30,7 @@ defined( 'INACTIVE_LOGOUT_DIR_PATH' ) || define( 'INACTIVE_LOGOUT_DIR_PATH', tra
 defined( 'INACTIVE_LOGOUT_DIR_URI' ) || define( 'INACTIVE_LOGOUT_DIR_URI', trailingslashit( plugin_dir_url( __FILE__ ) ) );
 defined( 'INACTIVE_LOGOUT_BUILD_URI' ) || define( 'INACTIVE_LOGOUT_BUILD_URI', INACTIVE_LOGOUT_DIR_URI . 'build' );
 defined( 'INACTIVE_LOGOUT_VIEWS' ) || define( 'INACTIVE_LOGOUT_VIEWS', INACTIVE_LOGOUT_DIR_PATH . 'views' );
-defined( 'INACTIVE_LOGOUT_VERSION' ) || define( 'INACTIVE_LOGOUT_VERSION', '3.5.3' );
+defined( 'INACTIVE_LOGOUT_VERSION' ) || define( 'INACTIVE_LOGOUT_VERSION', '3.5.4' );
 
 //Legacy support
 require_once dirname( __FILE__ ) . '/legacy/class-inactive-logout-helpers.php';

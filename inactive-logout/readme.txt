@@ -4,7 +4,7 @@ Tags: security, idle logout, logout, user redirection, concurrent login limit
 Donate link: https://www.paypal.com/donate?hosted_button_id=2UCQKR868M9WE
 Requires at least: 6.2
 Tested up to: 6.8
-Stable tag: 3.5.3
+Stable tag: 3.5.4
 License: GPLv2 or later
 Requires PHP: 7.4
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -29,6 +29,7 @@ A simple plugin which is easy to configure and use. After installing and activat
 * Custom Popup Message.
 * Show idle message for non authenticated users or redirect them.
 * Concurrent user logouts.
+* Toast notification on Logout.
 * Redirect to a Different Page instead of Popup box. Create a page such as timeout page and add your content there by creating a blank template or style it as you wish according to your theme.
 * Multiple User Role Configurations for individual timeout and session logout redirects.
 * Logout to custom page or existing page.
@@ -54,6 +55,7 @@ Few of the key features to **[Inactive Logout Pro](https://inactive-logout.com/p
 * Track user login sessions.
 * Logout redirects.
 * Login redirects.
+* Email notification and email template overrides for Locked concurrent session.
 * Disable inactive logout for specified pages according to your need. Check this **[Documentation](https://gist.github.com/techies23/6d2852eedd6ae56c486056e021e4ee48 "documentation")** for additional post type support.
 * Disable native wordpress login popup after logout
 * Modal Customizer
@@ -100,6 +102,9 @@ Slim Stat Analytics: Users using "Slimstat Analytics" plugin version upto 4.6.2 
 4. Multi User Role Screen
 
 == Changelog ==
+
+= 3.5.4 - August 13th, 2025 =
+* Minimum WordPress version is now 6.6.
 
 = 3.5.3 - June 18th, 2025 =
 * Added: Toast message turn on and off setting.
