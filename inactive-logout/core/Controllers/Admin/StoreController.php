@@ -75,7 +75,7 @@ class StoreController {
 		//Enabled multi-role
 		if ( ! empty( $postedData['ina_multiuser_roles'] ) ) {
 			foreach ( $postedData['ina_multiuser_roles'] as $k => $ina_multiuser_role ) {
-				$user_timeout_minutes               = ! empty( $postedData['ina_individual_user_timeout'][ $k ] ) ? absint( $postedData['ina_individual_user_timeout'][ $k ] ) : 15;
+				$user_timeout_minutes               = ! empty( $postedData['ina_individual_user_timeout'][ $ina_multiuser_role ] ) ? absint( $postedData['ina_individual_user_timeout'][ $ina_multiuser_role ] ) : 15;
 				$redirect_page_link                 = $postedData['ina_redirect_page_individual_user'][ $ina_multiuser_role ] ?? null;
 				$disabled_for_user                  = ! empty( $postedData['ina_disable_inactive_logout'][ $ina_multiuser_role ] );
 				$disabled_for_user_concurrent_login = ! empty( $postedData['ina_disable_inactive_concurrent_login'][ $ina_multiuser_role ] );

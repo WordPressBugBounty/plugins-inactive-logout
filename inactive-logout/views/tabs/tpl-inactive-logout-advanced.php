@@ -89,7 +89,7 @@ if ( $ina_multiuser_timeout_enabled ) {
                     <tr>
                         <td><?php echo esc_html( $result_roles[ $role ] ); ?></td>
                         <td>
-                            <input type="number" min="1" max="1440" value="<?php echo ( ! empty( $ina_multiuser_setting['timeout'] ) ) ? esc_attr( $ina_multiuser_setting['timeout'] ) : 15; ?>" name="ina_individual_user_timeout[]">
+                            <input type="number" min="1" max="1440" value="<?php echo ( ! empty( $ina_multiuser_setting['timeout'] ) ) ? esc_attr( $ina_multiuser_setting['timeout'] ) : 15; ?>" name="ina_individual_user_timeout[<?php echo esc_attr( $role ); ?>]">
                         </td>
                         <td>
                             <select name="ina_redirect_page_individual_user[<?php echo esc_attr( $role ); ?>]" data-validation="<?php esc_attr_e( 'Valid URL is required for this field.', 'inactive-logout' ); ?>" class="regular-text ina-select2-container-with-tags">

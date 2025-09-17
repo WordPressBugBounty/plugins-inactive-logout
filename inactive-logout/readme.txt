@@ -4,7 +4,7 @@ Tags: security, idle logout, logout, user redirection, concurrent login limit
 Donate link: https://www.paypal.com/donate?hosted_button_id=2UCQKR868M9WE
 Requires at least: 6.2
 Tested up to: 6.8
-Stable tag: 3.5.4
+Stable tag: 3.5.5
 License: GPLv2 or later
 Requires PHP: 7.4
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -102,6 +102,9 @@ Slim Stat Analytics: Users using "Slimstat Analytics" plugin version upto 4.6.2 
 4. Multi User Role Screen
 
 == Changelog ==
+
+= 3.5.5 - September 17th, 2025 =
+* Fixed: If roles were set in random order role based setting timeout field took the precedence value giving fuzzy results.
 
 = 3.5.4 - August 13th, 2025 =
 * Minimum WordPress version is now 6.6.
