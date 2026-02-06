@@ -3,8 +3,8 @@ Contributors: j__3rk
 Tags: security, idle logout, logout, user redirection, concurrent login limit
 Donate link: https://www.paypal.com/donate?hosted_button_id=2UCQKR868M9WE
 Requires at least: 6.2
-Tested up to: 6.8
-Stable tag: 3.5.5
+Tested up to: 6.9
+Stable tag: 3.6.1
 License: GPLv2 or later
 Requires PHP: 7.4
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -102,6 +102,16 @@ Slim Stat Analytics: Users using "Slimstat Analytics" plugin version upto 4.6.2 
 4. Multi User Role Screen
 
 == Changelog ==
+
+= 3.6.1 - December 9th, 2025 =
+* Minor Changes.
+
+= 3.6.0 - October 27th, 2025 =
+* Fixed stored XSS vulnerability in role-based redirect URL field.
+* Added nonce and capability checks for better CSRF and privilege protection.
+* Sanitized and validated all redirect and custom URL inputs using esc_url_raw() and wp_http_validate_url().
+* Improved internal data sanitization and validation for role-based and general settings.
+* Minor code cleanup and consistency fixes.
 
 = 3.5.5 - September 17th, 2025 =
 * Fixed: If roles were set in random order role based setting timeout field took the precedence value giving fuzzy results.

@@ -10,11 +10,15 @@ class StoreController {
 
 	/**
 	 * Save general settings logic here
-	 *
+	 *F
 	 * @return void
 	 */
 	public function saveGeneralSetting() {
 		check_ajax_referer( '_nonce_action_save_timeout_settings', '_save_timeout_settings' );
+
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_send_json_error( __( 'Unauthorized.', 'inactive-logout' ), 403 );
+		}
 
 		do_action( 'ina_before_update_basic_settings' );
 
@@ -68,6 +72,10 @@ class StoreController {
 	 * @return void
 	 */
 	public function saveRoleBasedSettings() {
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_die( __( 'Unauthorized.', 'inactive-logout' ), 403 );
+		}
+
 		$postedData = RoleBasedSettingRequests::get();
 
 		$container_multi_user_arr = array();
@@ -75,14 +83,16 @@ class StoreController {
 		//Enabled multi-role
 		if ( ! empty( $postedData['ina_multiuser_roles'] ) ) {
 			foreach ( $postedData['ina_multiuser_roles'] as $k => $ina_multiuser_role ) {
-				$user_timeout_minutes               = ! empty( $postedData['ina_individual_user_timeout'][ $ina_multiuser_role ] ) ? absint( $postedData['ina_individual_user_timeout'][ $ina_multiuser_role ] ) : 15;
-				$redirect_page_link                 = $postedData['ina_redirect_page_individual_user'][ $ina_multiuser_role ] ?? null;
+				$user_timeout_minutes = ! empty( $postedData['ina_individual_user_timeout'][ $ina_multiuser_role ] ) ? absint( $postedData['ina_individual_user_timeout'][ $ina_multiuser_role ] ) : 15;
+				$redirect_page_link   = !empty( $postedData['ina_redirect_page_individual_user'][ $ina_multiuser_role ] )
+					? esc_url_raw( trim( $postedData['ina_redirect_page_individual_user'][ $ina_multiuser_role ] ) )
+					: '';
 				$disabled_for_user                  = ! empty( $postedData['ina_disable_inactive_logout'][ $ina_multiuser_role ] );
 				$disabled_for_user_concurrent_login = ! empty( $postedData['ina_disable_inactive_concurrent_login'][ $ina_multiuser_role ] );
 
 				// Validate URL
-				if ( $redirect_page_link && filter_var( $redirect_page_link, FILTER_VALIDATE_URL ) === false ) {
-					$redirect_page_link = false;
+				if ( empty( $redirect_page_link ) || ! wp_http_validate_url( $redirect_page_link ) ) {
+					$redirect_page_link = '';
 				}
 
 				$container_multi_user_arr[] = array(
@@ -109,7 +119,7 @@ class StoreController {
 
 	public function resetRoleBasedSettings() {
 		if ( ! current_user_can( 'manage_options' ) ) {
-			exit;
+			wp_send_json_error( __( 'Unauthorized.', 'inactive-logout' ), 403 );
 		}
 
 		check_ajax_referer( '_ina_security_nonce', 'security' );

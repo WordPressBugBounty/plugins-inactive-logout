@@ -93,15 +93,14 @@ if ( $ina_multiuser_timeout_enabled ) {
                         </td>
                         <td>
                             <select name="ina_redirect_page_individual_user[<?php echo esc_attr( $role ); ?>]" data-validation="<?php esc_attr_e( 'Valid URL is required for this field.', 'inactive-logout' ); ?>" class="regular-text ina-select2-container-with-tags">
-								<?php
-								if ( ! empty( $ina_multiuser_setting['redirect_page'] ) ) {
-									if ( ! empty( $legacy_url ) ) {
-										echo "<option selected value='" . $legacy_url . "'>" . $legacy_url . "</option>";
-									} else {
-										echo "<option selected value='" . $ina_multiuser_setting['redirect_page'] . "'>" . $ina_multiuser_setting['redirect_page'] . "</option>";
-									}
-								}
-								?>
+	                            <?php if ( ! empty( $ina_multiuser_setting['redirect_page'] ) ) : ?>
+		                            <?php
+		                            $url_value = ! empty( $legacy_url ) ? $legacy_url : $ina_multiuser_setting['redirect_page'];
+		                            ?>
+                                    <option selected value="<?php echo esc_url( $url_value ); ?>">
+			                            <?php echo esc_html( $url_value ); ?>
+                                    </option>
+	                            <?php endif; ?>
                             </select>
                         </td>
                         <td>
