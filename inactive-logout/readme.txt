@@ -3,8 +3,8 @@ Contributors: j__3rk
 Tags: security, idle logout, logout, user redirection, concurrent login limit
 Donate link: https://www.paypal.com/donate?hosted_button_id=2UCQKR868M9WE
 Requires at least: 6.2
-Tested up to: 6.9
-Stable tag: 3.6.1
+Tested up to: 7.0
+Stable tag: 3.6.2
 License: GPLv2 or later
 Requires PHP: 7.4
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -102,6 +102,9 @@ Slim Stat Analytics: Users using "Slimstat Analytics" plugin version upto 4.6.2 
 4. Multi User Role Screen
 
 == Changelog ==
+
+= 3.6.2 - June 4th, 2026 =
+* Version bump for WordPress v7 Support.
 
 = 3.6.1 - December 9th, 2025 =
 * Minor Changes.
