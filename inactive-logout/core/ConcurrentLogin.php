@@ -77,8 +77,16 @@ class ConcurrentLogin {
 
 		// Finding maximum value of all sessions available.
 		$sessions = wp_get_all_sessions();
+
+		//Guard: if session is empoty.
+		if ( empty( $sessions ) ) return;
+
 		$newest   = max( wp_list_pluck( $sessions, 'login' ) );
 		$session  = $this->get_current_session();
+
+		//Guard: if sesion is not an array.
+		if ( ! is_array( $session ) ) return;
+
 		if ( $session['login'] === $newest ) {
 			wp_destroy_other_sessions();
 
